@@ -15,15 +15,15 @@
     <title>To do list - Vuejs</title>
   </head>
   <body>
-    
-    <div class="container">
+
+    <div id="list" class="container">
       <h1>To Do List</h1>
-      <ol id="list" v-if="toDo.length > 0" class="to_do_list">
+      <ol v-if="toDo.length > 0" class="to_do_list">
         <li v-for="(item, index) in toDo">{{item}} <i @click="deleteItem(index)" class="far fa-times-circle"></i></li>
       </ol>
 
-      <input class="add" type="text" placeholder="Aggiunti elemento alla lista">
-      <button type="button" name="button">Aggiungi</button>
+      <input class="add" type="text" placeholder="Aggiunti elemento alla lista" v-model="newItem" @keydown.enter="addItem">
+      <button @click="addItem" type="button" name="button">Aggiungi</button>
     </div>
     <script src="js/scripts.js" charset="utf-8"></script>
   </body>
