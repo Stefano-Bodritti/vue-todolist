@@ -18,12 +18,19 @@
 
     <div id="list" class="container">
       <h1>To Do List</h1>
-      <ol v-if="toDo.length > 0" class="to_do_list">
-        <li v-for="(item, index) in toDo">{{item}} <i @click="deleteItem(index)" class="far fa-times-circle"></i></li>
-      </ol>
 
-      <input class="add" type="text" placeholder="Aggiunti elemento alla lista" v-model="newItem" @keydown.enter="addItem">
-      <button @click="addItem" type="button" name="button">Aggiungi</button>
+      <div class="content">
+        <ol class="to_do_list">
+          <li v-for="(item, index) in toDo">{{item}} <i @click="deleteItem(index)" class="far fa-times-circle"></i></li>
+        </ol>
+
+        <div class="input_form">
+          <input class="add" type="text" placeholder="Aggiunti elemento alla lista" v-model="newItem" @keydown.enter="addItem">
+          <button @click="addItem" type="button" name="button" class="btn">Aggiungi</button>
+        </div>
+      </div>
+
+      <footer>Powered by <img src="https://vuejs.org/images/logo.png?_sw-precache=cf23526f451784ff137f161b8fe18d5a" alt="Vuejs"></footer>
     </div>
     <script src="js/scripts.js" charset="utf-8"></script>
   </body>
